@@ -1,40 +1,57 @@
-import React from 'react';
-import './App.css';
-import Header from './components/Header/Header';
+import React, { useState } from "react";
+import "./App.css";
+import Header from "./components/Header/Header";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import CoursePage from "./components/CoursePage/CoursePage";
+import CommunityPage from "./components/CommunityPage/CommunityPage";
+import Tracking from "./components/Tracking/Tracking";
+import Landing from "./components/Landing/Landing";
+import { AuthContext } from "./context/AuthContext";
 
 function App() {
+  const [auth, setAuth] = useState(false);
+  const [load, setLoad] = useState(false);
+
+  const setUser = () => {
+    setAuth(true);
+  };
+  const logout = () => {
+    setAuth(false);
+  };
+  const startLoading = () => {
+    setLoad(true);
+    console.log(load);
+  };
+  const finishLoading = () => {
+    setLoad(false);
+    console.log(load);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <Header />
-        {/* TODO:
-              1)LOGO
-              2)SEARCH_BAR
-              3)NAV -> COURSES + COMMUNITY(blog) + TRACKING(todo app)
-              4)Profile -> Name + viewmore->PROFILE(crud profile - backend firebase) + LOGOUT
-              4)m.b. Credits -> personal score
-         */}
-      </header>
-      {/* PROGRESS_BAR 
-          TODO: 
-            1)From backend download info about course -> array of lectures - map into component that renders circle + lectureName - in circle write number of a lecture or a complete sign
-            2)
-      */}
-
-      {/* 
-        CURRENT_LECTURE_CARD
-          TODO:
-            1)INFOCARD -> COURSE TITLE + LENGTH(min) + CREDIT_AMOUTN + DESCRIPTION + COMPLETE_BUTTON 
-            2)VIDEOPLAYER -> VIDEO_PLAYER + THUMBNAIL + CONTROL_PANEL
-      */}
-
-      {/* 
-        COMMENT_SECTION
-          TODO:
-            1)USER_CARD -> ICON + NAME + ${number}LIKES + POSTED {number}DAYS_AGO + REPLY_BUTTON
-            2)ADD_NEW_COMMENT -> TEXTAREA + ADD_A_COMMENT_BUTTON
-      */}
-    </div>
+    <AuthContext.Provider
+      value={{
+        authenticated: auth,
+        loading: load,
+        startLoading: startLoading,
+        finishLoading: finishLoading,
+        setUser: setUser,
+        logout: logout,
+      }}
+    >
+      <div className="App">
+        <BrowserRouter>
+          <Header />
+          <Switch>
+            <Route path="/" exact component={Landing} />
+            <Route path="/course" component={CoursePage} />
+            <Route path="/community" component={CommunityPage} />
+            <Route path="/tracking" component={Tracking} />
+          </Switch>
+          {/* <Route path="/settings" component={Settings} /> */}
+          {/* <Route path="/logout" component={Logout} /> */}
+        </BrowserRouter>
+      </div>
+    </AuthContext.Provider>
   );
 }
 

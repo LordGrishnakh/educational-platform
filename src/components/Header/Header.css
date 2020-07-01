@@ -1,9 +1,54 @@
 .rogi {
-  font-size: 2rem;
+  /* font-size: 2rem; */
   color: white;
+  padding: 0 1rem;
+}
+.rogi img {
+  height: 100px;
 }
 
 .app {
-  background-color: red;
-  padding: 2rem 1rem;
+  background-color: #333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app nav a {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  padding: 0 1rem;
+}
+.profile-group {
+  display: flex;
+  position: relative;
+}
+.profile-group div {
+  padding: 0.5rem;
+  background-color: #4e4e4e;
+}
+.profile-group div:hover {
+  cursor: pointer;
+  color: #c7815e;
+}
+.profile-group .fas {
+  cursor: pointer;
+}
+
+.dd-list {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+.dd-list a {
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  background-color: #4e4e4e;
+  color: white;
+}
+.dd-list a:hover {
+  color: #c7815e;
 }
