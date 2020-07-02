@@ -3,8 +3,10 @@ import React from "react";
 export const AuthContext = React.createContext({
   authenticated: false,
   loading: false,
+  userId: "",
   startLoading: () => {},
   finishLoading: () => {},
-  setUser: () => {},
+  setAuthStatus: () => {},
+  setUser: (a: string) => {},
   logout: () => {},
 });

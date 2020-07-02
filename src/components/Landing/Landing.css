@@ -6,9 +6,7 @@
   bottom: 0;
   transform: translate(-50%, -50%); */
   width: 100%;
-  height: 90vh;
-  border: 3px solid black;
-  border-radius: 25px;
+  /* height: 80vh; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -22,6 +20,32 @@
   border: 2px solid #333;
   border-radius: 25px;
 }
+.signup {
+  animation-name: sign;
+  animation-duration: .250s;
+}
+.signin {
+  animation-name: sign2;
+  animation-duration: .250s;
+}
+.login-box input {
+  background-color: lightgray;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  border: 0;
+  border-bottom: #333 solid 2px;
+}
+.login-box button {
+  padding: 0.5rem 1rem;
+  border: 0;
+  background-color: #333;
+  color: white;
+  margin: 1rem;
+  border-radius: 15px;
+}
+.login-box button:focus {
+  outline: none;
+}
 
 .container .login-group {
   display: flex;
@@ -30,4 +54,27 @@
 .login-group form {
   display: flex;
   flex-direction: column;
+}
+
+@keyframes sign {
+  0% {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  50% {
+    transform: rotate3d(0, 1, 0, 90deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+}
+@keyframes sign2 {
+  0% {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  50% {
+    transform: rotate3d(0, 1, 0, 90deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
 }

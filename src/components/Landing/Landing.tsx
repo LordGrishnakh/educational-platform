@@ -25,6 +25,7 @@ const Landing: React.FC = () => {
   const context = useContext(AuthContext);
   const [redirect, setRedirect] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [authMode, setAuthMode] = useState<"signin" | "signup">("signup");
 
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
@@ -38,8 +39,57 @@ const Landing: React.FC = () => {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((data) => {
-        // setRedirect(true);
-        context.setUser();
+        context.setAuthStatus();
+        context.setUser(data.user!.uid);
+        context.finishLoading();
+      })
+      .catch(function (error) {
+        // Handle Errors here.
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        context.finishLoading();
+        setErrorMsg(errorMessage + `error code: ${errorCode}`);
+        setTimeout(() => {
+          setErrorMsg("");
+        }, 15000);
+      });
+  };
+
+  const firebaseSigninUserWithPassword: (a: string, b: string) => void = (
+    email,
+    password
+  ) => {
+    context.startLoading();
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((data) => {
+        context.setAuthStatus();
+        setRedirect(true);
+        context.setUser(data.user!.uid);
+        context.finishLoading();
+      })
+      .catch(function (error) {
+        // Handle Errors here.
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        context.finishLoading();
+        setErrorMsg(errorMessage + `error code: ${errorCode}`);
+        setTimeout(() => {
+          setErrorMsg("");
+        }, 15000);
+      });
+  };
+
+  const firebaseAuthAnonym = () => {
+    context.startLoading();
+    firebase
+      .auth()
+      .signInAnonymously()
+      .then((data) => {
+        context.setAuthStatus();
+        setRedirect(true);
+        context.setUser(data.user!.uid);
         context.finishLoading();
       })
       .catch(function (error) {
@@ -54,54 +104,72 @@ const Landing: React.FC = () => {
       });
   };
 
-  const firebaseAuthAnonym = () => {
-    context.startLoading();
-    firebase
-      .auth()
-      .signInAnonymously()
-      .then((data) => {
-        setRedirect(true);
-        context.setUser();
-        context.finishLoading();
-      })
-      .catch(function (error) {
-        // Handle Errors here.
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        context.finishLoading();
-        setErrorMsg(errorMessage + `error code: ${errorCode}`);
-        setTimeout(() => {
-          setErrorMsg("");
-        }, 5000);
-      });
-  };
   return (
     <div className="container">
+      {context.userId}
       {<h1 style={{ color: "red" }}>{errorMsg}</h1>}
       {!context.loading ? (
-        <div className="login-box">
+        <div className={`login-box ${authMode}`}>
           <h1>Please login first</h1>
           <div className="login-group">
-            <h2>Login via login+password</h2>
+            <h2>
+              {authMode === "signup" ? "Create an account " : "Login "} via
+              login+password
+            </h2>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                firebaseCreateUserPassword(
-                  emailRef.current!.value,
-                  passwordRef.current!.value
-                );
               }}
             >
-              <label>email</label>
+              <label>Email</label>
               <input type="email" ref={emailRef} />
-              <label>password</label>
+              <label>Password</label>
               <input type="password" ref={passwordRef} />
-              <button type="submit">CREATE ACCOUNT</button>
+              {authMode === "signup" ? (
+                <button
+                  type="submit"
+                  onClick={() =>
+                    firebaseCreateUserPassword(
+                      emailRef.current!.value,
+                      passwordRef.current!.value
+                    )
+                  }
+                >
+                  CREATE ACCOUNT
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  onClick={() =>
+                    firebaseSigninUserWithPassword(
+                      emailRef.current!.value,
+                      passwordRef.current!.value
+                    )
+                  }
+                >
+                  SIGN IN ACCOUNT
+                </button>
+              )}
             </form>
+            {authMode === "signup" ? (
+              <p>
+                Already have an account? click{" "}
+                <button onClick={() => setAuthMode("signin")}>
+                  here to login
+                </button>
+              </p>
+            ) : (
+              <p>
+                Need to create an account? click{" "}
+                <button onClick={() => setAuthMode("signup")}>
+                  here to create
+                </button>
+              </p>
+            )}
           </div>
           <div className="login-group">
             <h2>Simmulate logging in</h2>
-            <button onClick={() => firebaseAuthAnonym()}>Login</button>
+            <button onClick={() => firebaseAuthAnonym()}>LOGIN</button>
           </div>
         </div>
       ) : (

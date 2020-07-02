@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -10,12 +10,24 @@ import { AuthContext } from "./context/AuthContext";
 
 function App() {
   const [auth, setAuth] = useState(false);
+  const [userId, setUserId] = useState("");
   const [load, setLoad] = useState(false);
 
-  const setUser = () => {
+  useEffect(() => {
+    if (localStorage.getItem("userId")) {
+      setAuth(true);
+    }
+  }, []);
+
+  const setAuthStatus = () => {
     setAuth(true);
   };
+  const setUser = (uid: string) => {
+    localStorage.setItem("userId", uid);
+    setUserId(uid);
+  };
   const logout = () => {
+    localStorage.removeItem("userId");
     setAuth(false);
   };
   const startLoading = () => {
@@ -32,8 +44,10 @@ function App() {
       value={{
         authenticated: auth,
         loading: load,
+        userId: userId,
         startLoading: startLoading,
         finishLoading: finishLoading,
+        setAuthStatus: setAuthStatus,
         setUser: setUser,
         logout: logout,
       }}

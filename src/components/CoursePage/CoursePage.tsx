@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const CoursePage: React.FC = () => {
+  const context = useContext(AuthContext);
   return (
     <div>
-      COURSES_PAGE
+      COURSES_PAGE - {context.authenticated.toString()}
       {/* TODO:
               1)LOGO
               2)SEARCH_BAR
