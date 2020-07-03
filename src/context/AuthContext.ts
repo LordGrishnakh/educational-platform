@@ -4,6 +4,11 @@ export interface Context {
   authenticated: boolean,
   loading: boolean,
   userId: string,
+  setCourseLectures: (lectures: {
+    duration: number;
+    id: number;
+    title: string;
+  }[]) => void,
   startLoading: () => void,
   finishLoading: () => void,
   setAuthStatus: () => void,
@@ -15,6 +20,12 @@ export const AuthContext = React.createContext({
   authenticated: false,
   loading: false,
   userId: "",
+  lectures: [{ duration: 0, id: 0, title: "", }],
+  setCourseLectures: (lectures: {
+    duration: number;
+    id: number;
+    title: string;
+  }[]) => {},
   startLoading: () => {},
   finishLoading: () => {},
   setAuthStatus: () => {},

@@ -12,12 +12,25 @@ function App() {
   const [auth, setAuth] = useState(false);
   const [userId, setUserId] = useState("");
   const [load, setLoad] = useState(false);
+  const [lectures, setLectures] = useState<{
+    duration: number;
+    id: number;
+    title: string;
+  }[]>([{ duration: 2841, id: 1, title: "some NEW title of lecture" }]);
 
   useEffect(() => {
     if (localStorage.getItem("userId")) {
       setAuth(true);
     }
   }, []);
+
+  const setCourseLectures = (lectures: {
+    duration: number;
+    id: number;
+    title: string;
+  }[]) => {
+    setLectures(lectures)
+  }
 
   const setAuthStatus = () => {
     setAuth(true);
@@ -45,6 +58,8 @@ function App() {
         authenticated: auth,
         loading: load,
         userId: userId,
+        lectures: lectures,
+        setCourseLectures: setCourseLectures,
         startLoading: startLoading,
         finishLoading: finishLoading,
         setAuthStatus: setAuthStatus,

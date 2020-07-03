@@ -5,103 +5,125 @@ import { fetchCourse } from "../../API/Authentication/Authentication";
 import "./CoursePage.css";
 
 interface Lecture {
-  duration: number,
-  id: number,
-  title: string
+  duration: number;
+  id: number;
+  title: string;
 }
 
 const CoursePage: React.FC = () => {
-  const fetchedData = {
-    lecture_1: {
-      duration: 2841,
-      id: 1,
-      title: "some title of lecture 1",
-    },
-    lecture_2: {
-      duration: 4865,
-      id: 2,
-      title: "second lecture title",
-    },
-    lecture_3: {
-      duration: 2290,
-      id: 3,
-      title: "title of third lecture",
-    },
-    lecture_4: {
-      duration: 2564,
-      id: 4,
-      title: "lorem ipsum title four",
-    },
-    lecture_5: {
-      duration: 3209,
-      id: 5,
-      title: "Mauris fringilla, velit eget scelerisque venenatis, tellus",
-    },
-    lecture_6: {
-      duration: 1978,
-      id: 6,
-      title: "Vivamus at dapibus lacus, sit amet sagittis",
-    },
-    lecture_7: {
-      duration: 2844,
-      id: 7,
-      title: "Morbi non neque lacus. Suspendisse viverra malesuada",
-    },
-    lecture_8: {
-      duration: 3261,
-      id: 8,
-      title: "Integer non volutpat nisi. Phasellus non commodo",
-    },
-    lecture_9: {
-      duration: 3450,
-      id: 9,
-      title: "Quisque pharetra auctor magna non maximus. Quisque",
-    },
-    lecture_10: {
-      duration: 3856,
-      id: 10,
-      title: "Vestibulum ut consectetur nibh. Quisque justo turpis",
-    },
-  };
-  const [selectedLecture, setSelectedLecture] = useState<Lecture>(fetchedData.lecture_1)
-  const context = useContext(AuthContext);
+  // const [fetchedData, setFetchedData] = useState<Lecture[]>()
 
-  // useEffect(() => {
-  //   fetchCourse();
-  // }, [])
-  const shorten = (title: string) => {
-    return title.slice(0, 20) + "..."
+  // let fetchedData = {
+  //   lecture_1: {
+  //     duration: 2841,
+  //     id: 1,
+  //     title: "some title of lecture 1",
+  //   },
+  //   lecture_2: {
+  //     duration: 4865,
+  //     id: 2,
+  //     title: "second lecture title",
+  //   },
+  //   lecture_3: {
+  //     duration: 2290,
+  //     id: 3,
+  //     title: "title of third lecture",
+  //   },
+  //   lecture_4: {
+  //     duration: 2564,
+  //     id: 4,
+  //     title: "lorem ipsum title four",
+  //   },
+  //   lecture_5: {
+  //     duration: 3209,
+  //     id: 5,
+  //     title: "Mauris fringilla, velit eget scelerisque venenatis, tellus",
+  //   },
+  //   lecture_6: {
+  //     duration: 1978,
+  //     id: 6,
+  //     title: "Vivamus at dapibus lacus, sit amet sagittis",
+  //   },
+  //   lecture_7: {
+  //     duration: 2844,
+  //     id: 7,
+  //     title: "Morbi non neque lacus. Suspendisse viverra malesuada",
+  //   },
+  //   lecture_8: {
+  //     duration: 3261,
+  //     id: 8,
+  //     title: "Integer non volutpat nisi. Phasellus non commodo",
+  //   },
+  //   lecture_9: {
+  //     duration: 3450,
+  //     id: 9,
+  //     title: "Quisque pharetra auctor magna non maximus. Quisque",
+  //   },
+  //   lecture_10: {
+  //     duration: 3856,
+  //     id: 10,
+  //     title: "Vestibulum ut consectetur nibh. Quisque justo turpis",
+  //   },
+  // };
+  const context = useContext(AuthContext);
+  const [selectedLecture, setSelectedLecture] = useState<Lecture>(
+    context.lectures[0]
+  );
+  const convertSecsToMins = (duration: number) => {
+    return Math.floor(duration / 60);
   }
+
+  useEffect(() => {
+    context.startLoading();
+    fetchCourse(context.finishLoading, context.setCourseLectures);
+  }, []);
+  const shorten = (title: string) => {
+    return title.slice(0, 20) + "...";
+  };
 
   return (
     <div>
-      <div className="progress-bar">
-        {fetchedData && Object.values(fetchedData).map((lecture) => (
-          <div className="lecture" key={lecture.id} onClick={()=>setSelectedLecture(lecture)}>
-            <div className="lecture-number" style={selectedLecture.id === lecture.id ? { backgroundColor: "#f0733a" } : { color: "black" }}>{lecture.id}</div>
-            <p className="lecture-title">{shorten(lecture.title)}</p>
+      {!context.loading ? (
+        <React.Fragment>
+          <div className="progress-bar">
+            {context.lectures &&
+              context.lectures.map((lecture) => (
+                <div
+                  className="lecture"
+                  key={lecture.id}
+                  onClick={() => setSelectedLecture(lecture)}
+                >
+                  <div
+                    className="lecture-number"
+                    style={
+                      selectedLecture.id === lecture.id
+                        ? { backgroundColor: "#f0733a" }
+                        : { color: "black" }
+                    }
+                  >
+                    {lecture.id}
+                  </div>
+                  <p className="lecture-title">{shorten(lecture.title)}</p>
+                </div>
+              ))}
           </div>
-        ))}
-      </div>
-      <button onClick={() => console.log(Object.values(fetchedData))}>
-        FETCH COURSE
-      </button>
-      COURSES_PAGE - {context.authenticated.toString()}
-      <div>title {selectedLecture.title}</div>
-      <div>id {selectedLecture.id}</div>
-      <div>duration {selectedLecture.duration}</div>
-      {/* TODO:
-              1)LOGO
-              2)SEARCH_BAR
-              3)NAV -> COURSES + COMMUNITY(blog) + TRACKING(todo app)
-              4)Profile -> Name + viewmore->PROFILE(crud profile - backend firebase) + LOGOUT
-              4)m.b. Credits -> personal score
-         */}
-      {/* PROGRESS_BAR 
-          TODO: 
-            1)From backend download info about course -> array of lectures - map into component that renders circle + lectureName - in circle write number of a lecture or a complete sign
-            2)
-      */}
+          <div className="course-container">
+            <div className="lecture-info">
+              <h1 className="lecture-header">{selectedLecture.title}</h1>
+              <div className="lecture-duration">Lesson length <span className="duration">{convertSecsToMins(selectedLecture.duration)} min</span> </div>
+              <div className="lecture-credits">Earn <b>10</b> credits for finishing this lesson</div>
+              <div className="lecture-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, incidunt nesciunt molestiae odio architecto ad dolor dolorum vero, pariatur ipsa ex similique minima! Hic recusandae ratione quos possimus nemo cum!</div>
+              <button onClick={()=>console.log("success")}>Mark as done</button>
+            </div>
+            <div className="video-player"></div>
+          </div>
+        </React.Fragment>
+      ) : (
+        <div>
+          <i className="fa fa-cog fa-spin fa-8x" />
+        </div>
+      )}
+
       {/* 
         CURRENT_LECTURE_CARD
           TODO:

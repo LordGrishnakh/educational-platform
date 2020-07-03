@@ -100,12 +100,13 @@ export const firebaseSigninUserWithPassword: (
     });
 };
 
-export const fetchCourse = () => {
+export const fetchCourse = (finishLoading: () => void, setCourseLectures: (a: any) => void) => {
   firebase
     .database()
     .ref("course")
     .on("value", (snap) => {
-      console.log(snap.val());
+      finishLoading();
+      setCourseLectures(Object.values(snap.val()));
     });
 };
 // export const fetchCourse = () => {
