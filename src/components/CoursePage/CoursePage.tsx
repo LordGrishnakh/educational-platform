@@ -1,4 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
+//@ts-ignore
+import ReactPlayer from "react-player/youtube";
 import { AuthContext } from "../../context/AuthContext";
 import { fetchCourse } from "../../API/Authentication/Authentication";
 
@@ -17,12 +19,12 @@ const CoursePage: React.FC = () => {
   );
   const convertSecsToMins = (duration: number) => {
     return Math.floor(duration / 60);
-  }
+  };
 
   useEffect(() => {
     context.startLoading();
     fetchCourse(context.finishLoading, context.setCourseLectures);
-  }, [context]);
+  }, []);
   const shorten = (title: string) => {
     return title.slice(0, 20) + "...";
   };
@@ -56,12 +58,32 @@ const CoursePage: React.FC = () => {
           <div className="course-container">
             <div className="lecture-info">
               <h1 className="lecture-header">{selectedLecture.title}</h1>
-              <div className="lecture-duration">Lesson length <span className="duration">{convertSecsToMins(selectedLecture.duration)} min</span> </div>
-              <div className="lecture-credits">Earn <b>10</b> credits for finishing this lesson</div>
-              <div className="lecture-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, incidunt nesciunt molestiae odio architecto ad dolor dolorum vero, pariatur ipsa ex similique minima! Hic recusandae ratione quos possimus nemo cum!</div>
-              <button onClick={()=>console.log("success")}>Mark as done</button>
+              <div className="lecture-duration">
+                Lesson length{" "}
+                <span className="duration">
+                  {convertSecsToMins(selectedLecture.duration)} min
+                </span>{" "}
+              </div>
+              <div className="lecture-credits">
+                Earn <b>10</b> credits for finishing this lesson
+              </div>
+              <div className="lecture-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. In,
+                incidunt nesciunt molestiae odio architecto ad dolor dolorum
+                vero, pariatur ipsa ex similique minima! Hic recusandae ratione
+                quos possimus nemo cum!
+              </div>
+              <button onClick={() => console.log("success")}>
+                Mark as done
+              </button>
             </div>
-            <div className="video-player"></div>
+            <div className="video-player">
+              <ReactPlayer
+                url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+                width="100%"
+                height="100%"
+              />
+            </div>
           </div>
         </React.Fragment>
       ) : (

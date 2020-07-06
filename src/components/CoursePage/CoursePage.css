@@ -20,8 +20,8 @@
   cursor: pointer;
 }
 .lecture:hover {
-  background: lightcyan;
-}
+  background: rgb(194, 190, 190);
+} 
 
 .lecture-number {
   text-align: center;
@@ -73,4 +73,5 @@
 }
 .video-player {
   width: 55%;
+  padding: 1rem;
 }

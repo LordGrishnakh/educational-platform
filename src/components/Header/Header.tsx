@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import Sidebar from "./Sidebar/Sidebar";
 
 const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -10,6 +11,7 @@ const Header: React.FC = () => {
     <React.Fragment>
       <header className="rogi app">
         {/* Logo */}
+        <Sidebar />
         <img src="images/SimpleStudyLogo.webp" alt="Simple Study Logo" />
         {/* Navigation */}
         {!context.authenticated ? (
