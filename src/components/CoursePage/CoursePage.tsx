@@ -11,60 +11,6 @@ interface Lecture {
 }
 
 const CoursePage: React.FC = () => {
-  // const [fetchedData, setFetchedData] = useState<Lecture[]>()
-
-  // let fetchedData = {
-  //   lecture_1: {
-  //     duration: 2841,
-  //     id: 1,
-  //     title: "some title of lecture 1",
-  //   },
-  //   lecture_2: {
-  //     duration: 4865,
-  //     id: 2,
-  //     title: "second lecture title",
-  //   },
-  //   lecture_3: {
-  //     duration: 2290,
-  //     id: 3,
-  //     title: "title of third lecture",
-  //   },
-  //   lecture_4: {
-  //     duration: 2564,
-  //     id: 4,
-  //     title: "lorem ipsum title four",
-  //   },
-  //   lecture_5: {
-  //     duration: 3209,
-  //     id: 5,
-  //     title: "Mauris fringilla, velit eget scelerisque venenatis, tellus",
-  //   },
-  //   lecture_6: {
-  //     duration: 1978,
-  //     id: 6,
-  //     title: "Vivamus at dapibus lacus, sit amet sagittis",
-  //   },
-  //   lecture_7: {
-  //     duration: 2844,
-  //     id: 7,
-  //     title: "Morbi non neque lacus. Suspendisse viverra malesuada",
-  //   },
-  //   lecture_8: {
-  //     duration: 3261,
-  //     id: 8,
-  //     title: "Integer non volutpat nisi. Phasellus non commodo",
-  //   },
-  //   lecture_9: {
-  //     duration: 3450,
-  //     id: 9,
-  //     title: "Quisque pharetra auctor magna non maximus. Quisque",
-  //   },
-  //   lecture_10: {
-  //     duration: 3856,
-  //     id: 10,
-  //     title: "Vestibulum ut consectetur nibh. Quisque justo turpis",
-  //   },
-  // };
   const context = useContext(AuthContext);
   const [selectedLecture, setSelectedLecture] = useState<Lecture>(
     context.lectures[0]
@@ -76,7 +22,7 @@ const CoursePage: React.FC = () => {
   useEffect(() => {
     context.startLoading();
     fetchCourse(context.finishLoading, context.setCourseLectures);
-  }, []);
+  }, [context]);
   const shorten = (title: string) => {
     return title.slice(0, 20) + "...";
   };
@@ -123,13 +69,6 @@ const CoursePage: React.FC = () => {
           <i className="fa fa-cog fa-spin fa-8x" />
         </div>
       )}
-
-      {/* 
-        CURRENT_LECTURE_CARD
-          TODO:
-            1)INFOCARD -> COURSE TITLE + LENGTH(min) + CREDIT_AMOUTN + DESCRIPTION + COMPLETE_BUTTON 
-            2)VIDEOPLAYER -> VIDEO_PLAYER + THUMBNAIL + CONTROL_PANEL
-      */}
       {/* 
         COMMENT_SECTION
           TODO:
