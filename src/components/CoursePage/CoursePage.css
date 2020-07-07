@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   cursor: pointer;
 }
 .lecture:hover {
@@ -74,4 +74,34 @@
 .video-player {
   width: 55%;
   padding: 1rem;
+}
+
+@media (max-width: 500px) {
+  .lecture {
+    min-width: 125px;
+    padding: 0;
+  }
+  .course-container {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+  .lecture-info {
+    width: 100%;
+    padding: 0;
+  }
+  .lecture-header,
+  .lecture-duration,
+  .lecture-credits,
+  .lecture-description,
+  .lecture-info button {
+    padding-left: 1rem;
+  }
+  .lecture-info button {
+    width: 100%;
+  }
+  .video-player {
+    width: 100%;
+    height: 300px;
+    padding: 0;
+  }
 }
