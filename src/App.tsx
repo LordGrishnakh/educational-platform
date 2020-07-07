@@ -13,17 +13,23 @@ function App() {
   const [auth, setAuth] = useState(false);
   const [userId, setUserId] = useState("");
   const [load, setLoad] = useState(false);
+  const [doneLections, setDoneLections] = useState<number[]>([])
   const [lectures, setLectures] = useState<{
     duration: number;
     id: number;
     title: string;
-  }[]>([{ duration: 2841, id: 1, title: "some NEW title of lecture" }]);
+    done: boolean
+  }[]>([{ duration: 2841, id: 1, title: "some NEW title of lecture", done: false }]);
 
   useEffect(() => {
     if (localStorage.getItem("userId")) {
       setAuth(true);
     }
   }, []);
+
+  const setDoneLectionsArray = (id: number) => {
+    setDoneLections([...doneLections, id]);
+  }
 
   const increaseCredits = (credit: number) => {
     setCredits(credits + credit)
@@ -33,6 +39,7 @@ function App() {
     duration: number;
     id: number;
     title: string;
+    done: boolean
   }[]) => {
     setLectures(lectures)
   }
@@ -65,6 +72,8 @@ function App() {
         userId: userId,
         lectures: lectures,
         credits: credits,
+        doneLections: doneLections,
+        setDoneLectionsArray: setDoneLectionsArray,
         increaseCredits: increaseCredits,
         setCourseLectures: setCourseLectures,
         startLoading: startLoading,

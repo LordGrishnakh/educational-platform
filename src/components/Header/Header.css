@@ -6,7 +6,8 @@
 .rogi img {
   height: 100px;
 }
-.fas {
+.fa-caret-down,
+.fa-bars {
   display: none;
 }
 

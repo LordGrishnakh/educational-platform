@@ -10,6 +10,7 @@ interface Lecture {
   duration: number;
   id: number;
   title: string;
+  done: boolean;
 }
 
 const CoursePage: React.FC = () => {
@@ -49,7 +50,15 @@ const CoursePage: React.FC = () => {
                         : { color: "black" }
                     }
                   >
-                    {lecture.id}
+                    {/* Если doneLections содержит id лекции - то покрасить в зелёный */}
+                    {context.doneLections.includes(lecture.id) ? (
+                      <i
+                        style={{ color: "green" }}
+                        className="fas fa-check"
+                      ></i>
+                    ) : (
+                      lecture.id
+                    )}
                   </div>
                   <p className="lecture-title">{shorten(lecture.title)}</p>
                 </div>
@@ -73,7 +82,14 @@ const CoursePage: React.FC = () => {
                 vero, pariatur ipsa ex similique minima! Hic recusandae ratione
                 quos possimus nemo cum!
               </div>
-              <button onClick={() => context.increaseCredits(10)}>
+              <button
+                onClick={() => {
+                  context.increaseCredits(10);
+                  context.setDoneLectionsArray(selectedLecture.id);
+                  console.log(context.doneLections);
+                }}
+                disabled={context.doneLections.includes(selectedLecture.id)}
+              >
                 Mark as done
               </button>
             </div>
