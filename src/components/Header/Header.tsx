@@ -69,7 +69,7 @@ const Header: React.FC = () => {
                 </ul>
               )}
             </div>
-            <div className="credits">{0} Credits</div>
+            <div className="credits">{context.credits} Credits</div>
           </div>
         ) : (
           <div className="profile-group">Login first</div>

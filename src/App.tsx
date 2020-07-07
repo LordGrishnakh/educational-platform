@@ -9,6 +9,7 @@ import Landing from "./components/Landing/Landing";
 import { AuthContext } from "./context/AuthContext";
 
 function App() {
+  const [credits, setCredits] = useState(0);
   const [auth, setAuth] = useState(false);
   const [userId, setUserId] = useState("");
   const [load, setLoad] = useState(false);
@@ -23,6 +24,10 @@ function App() {
       setAuth(true);
     }
   }, []);
+
+  const increaseCredits = (credit: number) => {
+    setCredits(credits + credit)
+  }
 
   const setCourseLectures = (lectures: {
     duration: number;
@@ -59,6 +64,8 @@ function App() {
         loading: load,
         userId: userId,
         lectures: lectures,
+        credits: credits,
+        increaseCredits: increaseCredits,
         setCourseLectures: setCourseLectures,
         startLoading: startLoading,
         finishLoading: finishLoading,

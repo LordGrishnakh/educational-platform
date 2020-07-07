@@ -73,7 +73,7 @@ const CoursePage: React.FC = () => {
                 vero, pariatur ipsa ex similique minima! Hic recusandae ratione
                 quos possimus nemo cum!
               </div>
-              <button onClick={() => console.log("success")}>
+              <button onClick={() => context.increaseCredits(10)}>
                 Mark as done
               </button>
             </div>
