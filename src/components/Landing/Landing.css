@@ -22,11 +22,11 @@
 }
 .signup {
   animation-name: sign;
-  animation-duration: .250s;
+  animation-duration: 0.25s;
 }
 .signin {
   animation-name: sign2;
-  animation-duration: .250s;
+  animation-duration: 0.25s;
 }
 .login-box input {
   background-color: lightgray;

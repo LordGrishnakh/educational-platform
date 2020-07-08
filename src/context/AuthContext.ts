@@ -1,24 +1,26 @@
 import React from "react";
 
 export interface Context {
-  authenticated: boolean,
-  loading: boolean,
-  userId: string,
-  credits: number,
-  doneLections: number[],
+  authenticated: boolean;
+  loading: boolean;
+  userId: string;
+  credits: number;
+  doneLections: number[];
   setDoneLectionsArray: (id: number) => void;
   increaseCredits: (credits: number) => void;
-  setCourseLectures: (lectures: {
-    duration: number;
-    id: number;
-    title: string;
-    done: boolean;
-  }[]) => void,
-  startLoading: () => void,
-  finishLoading: () => void,
-  setAuthStatus: () => void,
-  setUser: (a: string) => void,
-  logout: () => void,
+  setCourseLectures: (
+    lectures: {
+      duration: number;
+      id: number;
+      title: string;
+      done: boolean;
+    }[]
+  ) => void;
+  startLoading: () => void;
+  finishLoading: () => void;
+  setAuthStatus: () => void;
+  setUser: (a: string) => void;
+  logout: () => void;
 }
 
 export const AuthContext = React.createContext({
@@ -30,12 +32,14 @@ export const AuthContext = React.createContext({
   doneLections: [1],
   setDoneLectionsArray: (id: number) => {},
   increaseCredits: (credits: number) => {},
-  setCourseLectures: (lectures: {
-    duration: number;
-    id: number;
-    title: string;
-    done: boolean
-  }[]) => {},
+  setCourseLectures: (
+    lectures: {
+      duration: number;
+      id: number;
+      title: string;
+      done: boolean;
+    }[]
+  ) => {},
   startLoading: () => {},
   finishLoading: () => {},
   setAuthStatus: () => {},

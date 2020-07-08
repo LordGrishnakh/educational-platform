@@ -13,13 +13,17 @@ function App() {
   const [auth, setAuth] = useState(false);
   const [userId, setUserId] = useState("");
   const [load, setLoad] = useState(false);
-  const [doneLections, setDoneLections] = useState<number[]>([])
-  const [lectures, setLectures] = useState<{
-    duration: number;
-    id: number;
-    title: string;
-    done: boolean
-  }[]>([{ duration: 2841, id: 1, title: "some NEW title of lecture", done: false }]);
+  const [doneLections, setDoneLections] = useState<number[]>([]);
+  const [lectures, setLectures] = useState<
+    {
+      duration: number;
+      id: number;
+      title: string;
+      done: boolean;
+    }[]
+  >([
+    { duration: 2841, id: 1, title: "some NEW title of lecture", done: false },
+  ]);
 
   useEffect(() => {
     if (localStorage.getItem("userId")) {
@@ -29,20 +33,22 @@ function App() {
 
   const setDoneLectionsArray = (id: number) => {
     setDoneLections([...doneLections, id]);
-  }
+  };
 
   const increaseCredits = (credit: number) => {
-    setCredits(credits + credit)
-  }
+    setCredits(credits + credit);
+  };
 
-  const setCourseLectures = (lectures: {
-    duration: number;
-    id: number;
-    title: string;
-    done: boolean
-  }[]) => {
-    setLectures(lectures)
-  }
+  const setCourseLectures = (
+    lectures: {
+      duration: number;
+      id: number;
+      title: string;
+      done: boolean;
+    }[]
+  ) => {
+    setLectures(lectures);
+  };
 
   const setAuthStatus = () => {
     setAuth(true);

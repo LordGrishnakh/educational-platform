@@ -6,11 +6,10 @@
 .rogi img {
   height: 100px;
 }
-.fa-caret-down,
-.fa-bars {
+
+.sidebar {
   display: none;
 }
-
 .app {
   background-color: #333333;
   display: flex;
@@ -66,6 +65,9 @@
   }
   .rogi img {
     margin: auto;
+  }
+  .sidebar {
+    display: block;
   }
   .fas {
     display: block;
