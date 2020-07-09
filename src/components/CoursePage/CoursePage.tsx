@@ -90,7 +90,7 @@ const CoursePage: React.FC = () => {
                 }}
                 disabled={context.doneLections.includes(selectedLecture.id)}
               >
-                Mark as done
+                { context.doneLections.includes(selectedLecture.id) ? "Lection is done" : "Mark as done" }
               </button>
             </div>
             <div className="video-player">

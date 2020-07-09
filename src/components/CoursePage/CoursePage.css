@@ -76,6 +76,11 @@
   padding: 1rem;
 }
 
+.lecture-info button:disabled {
+  background-color: white;
+  color: green;
+}
+
 @media (max-width: 500px) {
   .lecture {
     min-width: 125px;
