@@ -2,6 +2,7 @@
   /* font-size: 2rem; */
   color: white;
   padding: 0 1rem;
+  max-width: 100%;
 }
 .rogi img {
   height: 100px;
@@ -56,7 +57,7 @@
   color: #c7815e;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   nav {
     display: none;
   }

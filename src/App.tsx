@@ -7,10 +7,12 @@ import CommunityPage from "./components/CommunityPage/CommunityPage";
 import Tracking from "./components/Tracking/Tracking";
 import Landing from "./components/Landing/Landing";
 import { AuthContext } from "./context/AuthContext";
+import ChooseCoursePage from "./components/ChooseCoursePage/ChooseCoursePage";
 
 function App() {
   const [credits, setCredits] = useState(0);
   const [auth, setAuth] = useState(false);
+  const [route, setRoute] = useState("")
   const [userId, setUserId] = useState("");
   const [load, setLoad] = useState(false);
   const [doneLections, setDoneLections] = useState<number[]>([]);
@@ -69,6 +71,9 @@ function App() {
     setLoad(false);
     console.log(load);
   };
+  const setRouteProp = (route: string) => {
+    setRoute(route);
+  }
 
   return (
     <AuthContext.Provider
@@ -87,6 +92,8 @@ function App() {
         setAuthStatus: setAuthStatus,
         setUser: setUser,
         logout: logout,
+        route: route,
+        setRouteProp: setRouteProp
       }}
     >
       <div className="App">
@@ -94,7 +101,8 @@ function App() {
           <Header />
           <Switch>
             <Route path="/" exact component={Landing} />
-            <Route path="/course" component={CoursePage} />
+            <Route path="/courses" exact component={ChooseCoursePage} />
+            <Route path="/courses/:id" component={CoursePage} />
             <Route path="/community" component={CommunityPage} />
             <Route path="/tracking" component={Tracking} />
           </Switch>

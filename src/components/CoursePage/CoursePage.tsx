@@ -24,7 +24,7 @@ const CoursePage: React.FC = () => {
 
   useEffect(() => {
     context.startLoading();
-    fetchCourse(context.finishLoading, context.setCourseLectures);
+    fetchCourse(context.finishLoading, context.setCourseLectures, context.route);
   }, []);
   const shorten = (title: string) => {
     return title.slice(0, 20) + "...";

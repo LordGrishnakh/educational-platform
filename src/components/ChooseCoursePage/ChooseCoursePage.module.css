@@ -1,0 +1,59 @@
+.Container {
+  padding-left: 400px;
+}
+
+.Title {
+  height: 100px;
+  padding-left: 1rem;
+  background-color: #DFDFDF;
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.Courses {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 200px;
+}
+
+@media (max-width: 1921px) {
+  .Container {
+    padding-left: 225px;
+  }
+}
+@media (max-width: 1365px) {
+  .Container {
+    padding-left: 125px;
+  }
+}
+@media (max-width: 769px) {
+  .Container {
+    padding-left: 50px;
+  }
+  .Courses {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 100px;
+  }
+}
+
+@media (max-width: 700px) {
+  .Title {
+    margin-bottom: 2rem; 
+  }
+  .Courses {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: space-between;
+    column-gap: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .Container {
+    padding: 0;
+  }
+  .Courses {
+    grid-template-columns: repeat(1 ,1fr);
+    justify-items: center;
+  }
+}

@@ -8,6 +8,7 @@ import {
   firebaseAuthAnonym,
   firebaseCreateUserPassword,
   firebaseSigninUserWithPassword,
+  writeUserData
 } from "../../API/Authentication/Authentication";
 
 const Landing: React.FC = () => {
@@ -44,12 +45,12 @@ const Landing: React.FC = () => {
                 <button
                   type="submit"
                   onClick={() =>
-                    firebaseCreateUserPassword(
+                    {  firebaseCreateUserPassword(
                       context,
                       setErrorMsg,
                       emailRef.current!.value,
                       passwordRef.current!.value
-                    )
+                    ) }
                   }
                 >
                   CREATE ACCOUNT
@@ -57,7 +58,7 @@ const Landing: React.FC = () => {
               ) : (
                 <button
                   type="submit"
-                  onClick={() =>
+                  onClick={() => 
                     firebaseSigninUserWithPassword(
                       context,
                       setRedirect,
@@ -101,7 +102,7 @@ const Landing: React.FC = () => {
       ) : (
         <div>
           <i className="fa fa-cog fa-spin fa-4x" />
-          {redirect ? <Redirect to="/course" /> : null}
+          {redirect ? <Redirect to="/courses" /> : null}
         </div>
       )}
     </div>

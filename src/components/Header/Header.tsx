@@ -28,12 +28,12 @@ const Header: React.FC = () => {
         ) : (
           <nav>
             <NavLink
-              to="/course"
+              to="/courses"
               activeStyle={{
                 color: "#c7815e",
               }}
             >
-              Course
+              Courses
             </NavLink>
             <NavLink
               to="/community"

@@ -1,0 +1,992 @@
+{
+  "courses" : {
+    "JS for Beginners" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "js-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "js-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "js-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "js-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "js-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "js-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "js-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "js-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "js-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "js-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "TS for Beginners" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "ts-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "ts-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "ts-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "ts-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "ts-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "ts-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "ts-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "ts-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "ts-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "ts-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "CSS for Beginners" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "css-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "css-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "css-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "css-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "css-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "css-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "css-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "css-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "css-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "css-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "Web Development" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "web-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "web-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "web-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "web-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "web-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "web-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "web-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "web-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "web-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "web-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "React" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "react-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "react-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "react-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "react-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "react-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "react-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "react-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "react-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "react-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "react-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "React with Redux" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "React with Redux-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "React with Redux-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "React with Redux-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "React with Redux-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "React with Redux-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "React with Redux-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "React with Redux-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "React with Redux-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "React with Redux-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "React with Redux-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "Manage your state like pro" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "Manage your state like pro-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "Manage your state like pro-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "Manage your state like pro-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "Manage your state like pro-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "Manage your state like pro-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "Manage your state like pro-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "Manage your state like pro-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "Manage your state like pro-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "Manage your state like pro-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "Manage your state like pro-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "HTML CSS JS" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "HTML CSS JS-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "HTML CSS JS-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "HTML CSS JS-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "HTML CSS JS-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "HTML CSS JS-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "HTML CSS JS-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "HTML CSS JS-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "HTML CSS JS-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "HTML CSS JS-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "HTML CSS JS-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "Basics of Web Design" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "Basics of Web Design-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "Basics of Web Design-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "Basics of Web Design-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "Basics of Web Design-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "Basics of Web Design-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "Basics of Web Design-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "Basics of Web Design-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "Basics of Web Design-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "Basics of Web Design-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "Basics of Web Design-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "Bootstrap 5" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "Bootstrap 5-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "Bootstrap 5-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "Bootstrap 5-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "Bootstrap 5-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "Bootstrap 5-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "Bootstrap 5-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "Bootstrap 5-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "Bootstrap 5-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "Bootstrap 5-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "Bootstrap 5-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "Modern Frontend Development" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "Modern Frontend Development-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "Modern Frontend Development-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "Modern Frontend Development-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "Modern Frontend Development-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "Modern Frontend Development-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "Modern Frontend Development-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "Modern Frontend Development-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "Modern Frontend Development-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "Modern Frontend Development-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "Modern Frontend Development-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "MERN Full-Stack Introduction" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "MERN Full-Stack Introduction-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "MERN Full-Stack Introduction-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "MERN Full-Stack Introduction-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "MERN Full-Stack Introduction-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "MERN Full-Stack Introduction-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "MERN Full-Stack Introduction-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "MERN Full-Stack Introduction-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "MERN Full-Stack Introduction-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "MERN Full-Stack Introduction-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "MERN Full-Stack Introduction-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "Advanced CSS" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "Advanced CSS-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "Advanced CSS-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "Advanced CSS-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "Advanced CSS-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "Advanced CSS-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "Advanced CSS-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "Advanced CSS-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "Advanced CSS-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "Advanced CSS-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "Advanced CSS-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "SCSS best guide 2020" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "SCSS best guide 2020-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "SCSS best guide 2020-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "SCSS best guide 2020-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "SCSS best guide 2020-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "SCSS best guide 2020-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "SCSS best guide 2020-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "SCSS best guide 2020-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "SCSS best guide 2020-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "SCSS best guide 2020-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "SCSS best guide 2020-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "Webpack your back" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "Webpack your back-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "Webpack your back-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "Webpack your back-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "Webpack your back-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "Webpack your back-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "Webpack your back-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "Webpack your back-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "Webpack your back-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "Webpack your back-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "Webpack your back-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "Algorithms course at MID (like MIT but better)" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "Algorithms course at MID-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "Algorithms course at MID-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "Algorithms course at MID-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "Algorithms course at MID-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "Algorithms course at MID-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "Algorithms course at MID-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "Algorithms course at MID-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "Algorithms course at MID-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "Algorithms course at MID-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "Algorithms course at MID-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "Operating Systems" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "Operating Systems-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "Operating Systems-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "Operating Systems-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "Operating Systems-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "Operating Systems-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "Operating Systems-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "Operating Systems-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "Operating Systems-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "Operating Systems-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "Operating Systems-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "Memory Management" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "Memory Management-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "Memory Management-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "Memory Management-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "Memory Management-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "Memory Management-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "Memory Management-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "Memory Management-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "Memory Management-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "Memory Management-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "Memory Management-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    },
+    "Time Management" : {
+      "lecture_1" : {
+        "duration" : 2841,
+        "id" : "Time Management-1",
+        "title" : "some NEW title of lecture 1"
+      },
+      "lecture_10" : {
+        "duration" : 3856,
+        "id" : "Time Management-10",
+        "title" : "Vestibulum ut consectetur nibh. Quisque justo turpis"
+      },
+      "lecture_2" : {
+        "duration" : 4865,
+        "id" : "Time Management-2",
+        "title" : "second lecture title"
+      },
+      "lecture_3" : {
+        "duration" : 2290,
+        "id" : "Time Management-3",
+        "title" : "title of third lecture"
+      },
+      "lecture_4" : {
+        "duration" : 2564,
+        "id" : "Time Management-4",
+        "title" : "lorem ipsum title four"
+      },
+      "lecture_5" : {
+        "duration" : 3209,
+        "id" : "Time Management-5",
+        "title" : "Mauris fringilla, velit eget scelerisque venenatis, tellus"
+      },
+      "lecture_6" : {
+        "duration" : 1978,
+        "id" : "Time Management-6",
+        "title" : "Vivamus at dapibus lacus, sit amet sagittis"
+      },
+      "lecture_7" : {
+        "duration" : 2844,
+        "id" : "Time Management-7",
+        "title" : "Morbi non neque lacus. Suspendisse viverra malesuada"
+      },
+      "lecture_8" : {
+        "duration" : 3261,
+        "id" : "Time Management-8",
+        "title" : "Integer non volutpat nisi. Phasellus non commodo"
+      },
+      "lecture_9" : {
+        "duration" : 3450,
+        "id" : "Time Management-9",
+        "title" : "Quisque pharetra auctor magna non maximus. Quisque"
+      }
+    }
+  }
+}

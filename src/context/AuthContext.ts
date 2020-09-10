@@ -21,6 +21,8 @@ export interface Context {
   setAuthStatus: () => void;
   setUser: (a: string) => void;
   logout: () => void;
+  route: string,
+  setRouteProp: (route: string) => void
 }
 
 export const AuthContext = React.createContext({
@@ -45,4 +47,6 @@ export const AuthContext = React.createContext({
   setAuthStatus: () => {},
   setUser: (a: string) => {},
   logout: () => {},
+  route: "",
+  setRouteProp: (r: string) => {}
 });
