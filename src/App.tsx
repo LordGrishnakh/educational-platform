@@ -15,16 +15,16 @@ function App() {
   const [route, setRoute] = useState("")
   const [userId, setUserId] = useState("");
   const [load, setLoad] = useState(false);
-  const [doneLections, setDoneLections] = useState<number[]>([]);
+  const [doneLections, setDoneLections] = useState<string[]>([]);
   const [lectures, setLectures] = useState<
     {
       duration: number;
-      id: number;
+      id: string;
       title: string;
       done: boolean;
     }[]
   >([
-    { duration: 2841, id: 1, title: "some NEW title of lecture", done: false },
+    { duration: 2841, id: "1", title: "some NEW title of lecture", done: false },
   ]);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function App() {
     }
   }, []);
 
-  const setDoneLectionsArray = (id: number) => {
+  const setDoneLectionsArray = (id: string) => {
     setDoneLections([...doneLections, id]);
   };
 
@@ -44,7 +44,7 @@ function App() {
   const setCourseLectures = (
     lectures: {
       duration: number;
-      id: number;
+      id: string;
       title: string;
       done: boolean;
     }[]
@@ -72,6 +72,7 @@ function App() {
     console.log(load);
   };
   const setRouteProp = (route: string) => {
+    localStorage.setItem("route", route);
     setRoute(route);
   }
 

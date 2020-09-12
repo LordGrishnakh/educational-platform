@@ -31,11 +31,18 @@ const ChooseCoursePage = () => {
       <div className={ChooseCourseStyling.Title}>
         <h1>My Courses</h1>
         <button onClick={() => console.log(courseTitles)}>show state</button>
-        <button onClick={() => console.log(context.route)}>show route prop</button>
+        <button onClick={() => console.log(context.route)}>
+          show route prop
+        </button>
       </div>
       <div className={ChooseCourseStyling.Courses}>
         {courseTitles!.map((course) => (
-          <ChooseCard key={course} title={course} route={course.split(" ").join("-")} click={()=>context.setRouteProp(course)} />
+          <ChooseCard
+            key={course}
+            title={course}
+            route={course.split(" ").join("-")}
+            click={() => context.setRouteProp(course)}
+          />
         ))}
       </div>
     </div>

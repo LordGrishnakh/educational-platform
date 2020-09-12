@@ -5,13 +5,13 @@ export interface Context {
   loading: boolean;
   userId: string;
   credits: number;
-  doneLections: number[];
-  setDoneLectionsArray: (id: number) => void;
+  doneLections: string[];
+  setDoneLectionsArray: (id: string) => void;
   increaseCredits: (credits: number) => void;
   setCourseLectures: (
     lectures: {
       duration: number;
-      id: number;
+      id: string;
       title: string;
       done: boolean;
     }[]
@@ -29,15 +29,15 @@ export const AuthContext = React.createContext({
   authenticated: false,
   loading: false,
   userId: "",
-  lectures: [{ duration: 0, id: 0, title: "", done: false }],
+  lectures: [{ duration: 0, id: "", title: "", done: false }],
   credits: 0,
-  doneLections: [1],
-  setDoneLectionsArray: (id: number) => {},
+  doneLections: [""],
+  setDoneLectionsArray: (id: string) => {},
   increaseCredits: (credits: number) => {},
   setCourseLectures: (
     lectures: {
       duration: number;
-      id: number;
+      id: string;
       title: string;
       done: boolean;
     }[]

@@ -8,7 +8,7 @@ import "./CoursePage.css";
 
 interface Lecture {
   duration: number;
-  id: number;
+  id: string;
   title: string;
   done: boolean;
 }
@@ -24,7 +24,7 @@ const CoursePage: React.FC = () => {
 
   useEffect(() => {
     context.startLoading();
-    fetchCourse(context.finishLoading, context.setCourseLectures, context.route);
+    fetchCourse(context.finishLoading, context.setCourseLectures, localStorage.getItem("route"));
   }, []);
   const shorten = (title: string) => {
     return title.slice(0, 20) + "...";
@@ -57,7 +57,7 @@ const CoursePage: React.FC = () => {
                         className="fas fa-check"
                       ></i>
                     ) : (
-                      lecture.id
+                      lecture.id.split("-")[1]
                     )}
                   </div>
                   <p className="lecture-title">{shorten(lecture.title)}</p>

@@ -12,6 +12,7 @@ type CardProps = {
 
 const ChooseCard: React.FC<CardProps> = (props) => {
   const [progress, setProgress] = useState(1);
+
   return (
     <Link to={`courses/${props.route}`}>
       <div className={ChooseCardStyling.Container} onClick={props.click}>

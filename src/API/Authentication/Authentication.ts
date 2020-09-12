@@ -28,6 +28,84 @@ export const firebaseAuthAnonym: (
     .signInAnonymously()
     .then((data) => {
       context.setAuthStatus();
+      firebase.database().ref('users/' + data.user?.uid ).set({
+        "JS for Beginners": {
+          watchedLessons: [1, 3, 1],
+          rating: 0
+        },
+        "TS for Beginners": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "CSS for Beginners": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "Web Development": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "React": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "React with Redux": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "Manage your state like pro": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "HTML CSS JS": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "Basics of Web Design": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "Bootstrap 5": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "Modern Frontend Development": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "MERN Full-Stack Introduction": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "Advanced CSS": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "SCSS best guide 2020": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "Webpack your back": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "Algorithms course at MID": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "Operating Systems": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "Memory Management": {
+          watchedLessons: [],
+          rating: 0
+        },
+        "Time Management": {
+          watchedLessons: [],
+          rating: 0
+        },
+      });
       setRedirect(true);
       context.setUser(data.user!.uid);
       context.finishLoading();
@@ -178,11 +256,12 @@ export const firebaseSigninUserWithPassword: (
     });
 };
 
-export const fetchCourse = (finishLoading: () => void, setCourseLectures: (a: any) => void, route: string) => {
+export const fetchCourse = (finishLoading: () => void, setCourseLectures: (a: any) => void, route: any) => {
   firebase
     .database()
     .ref(`courses/${route}`)
     .on("value", (snap) => {
+      console.log(snap.val())
       finishLoading();
       setCourseLectures(Object.values(snap.val()));
     });
@@ -195,6 +274,12 @@ export const fetchCourses = (setCourses: (a: any) => void) => {
       setCourses(Object.keys(snap.val()));
     });
 };
+
+// export const fetchProgress = (setProgress: (a: any) => void, userID: string) => {
+//   firebase
+//     .database()
+//     .ref(`users/${userID}`)
+// }
 
 export const writeUserData = (userId: string) => {
   firebase.database().ref('users/' + userId + 1).set({
