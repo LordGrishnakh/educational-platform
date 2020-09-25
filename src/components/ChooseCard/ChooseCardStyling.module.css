@@ -1,7 +1,11 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .Container {
   width: 280px;
   height: 250px;
-  cursor: pointer;
 }
 .Container img {
   opacity: 1;
@@ -11,6 +15,7 @@
   transition: 0.5s ease;
 }
 .Card {
+  cursor: pointer;
   position: relative;
 }
 .Container:hover img {
@@ -31,7 +36,6 @@
 .Container:hover .PlayBTN {
   opacity: 1;
 }
-
 
 .Content {
   border: 1px solid #ccc;
@@ -61,7 +65,6 @@
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
-
 
 @media (max-width: 1281px) {
   .Container {

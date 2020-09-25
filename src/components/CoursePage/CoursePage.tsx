@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 //@ts-ignore
 import ReactPlayer from "react-player/youtube";
 import { AuthContext } from "../../context/AuthContext";
-import { fetchCourse } from "../../API/Authentication/Authentication";
+import { fetchCourse, makeProgress } from "../../API/Authentication/Authentication";
 
 import "./CoursePage.css";
 
@@ -10,21 +10,19 @@ interface Lecture {
   duration: number;
   id: string;
   title: string;
-  done: boolean;
 }
 
 const CoursePage: React.FC = () => {
   const context = useContext(AuthContext);
-  const [selectedLecture, setSelectedLecture] = useState<Lecture>(
-    context.lectures[0]
-  );
+  const [selectedLecture, setSelectedLecture] = useState<Lecture>(context.lectures[0]);
+  const [initiallyDoneLections, setInitiallyDoneLections] = useState<string[]>([])
   const convertSecsToMins = (duration: number) => {
     return Math.floor(duration / 60);
   };
 
   useEffect(() => {
     context.startLoading();
-    fetchCourse(context.finishLoading, context.setCourseLectures, localStorage.getItem("route"));
+    fetchCourse(context.finishLoading, context.setCourseLectures, setSelectedLecture, setInitiallyDoneLections, localStorage.getItem("route"), localStorage.getItem("userId"));
   }, []);
   const shorten = (title: string) => {
     return title.slice(0, 20) + "...";
@@ -86,7 +84,8 @@ const CoursePage: React.FC = () => {
                 onClick={() => {
                   context.increaseCredits(10);
                   context.setDoneLectionsArray(selectedLecture.id);
-                  console.log(context.doneLections);
+                  //@ts-ignore
+                  makeProgress(localStorage.getItem("userId"), localStorage.getItem("route"), JSON.parse(localStorage.getItem("doneLections")))
                 }}
                 disabled={context.doneLections.includes(selectedLecture.id)}
               >

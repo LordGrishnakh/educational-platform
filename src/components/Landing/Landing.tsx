@@ -7,8 +7,7 @@ import { Redirect } from "react-router-dom";
 import {
   firebaseAuthAnonym,
   firebaseCreateUserPassword,
-  firebaseSigninUserWithPassword,
-  writeUserData
+  firebaseSigninUserWithPassword
 } from "../../API/Authentication/Authentication";
 
 const Landing: React.FC = () => {

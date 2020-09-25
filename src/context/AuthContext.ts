@@ -13,7 +13,6 @@ export interface Context {
       duration: number;
       id: string;
       title: string;
-      done: boolean;
     }[]
   ) => void;
   startLoading: () => void;
@@ -29,7 +28,7 @@ export const AuthContext = React.createContext({
   authenticated: false,
   loading: false,
   userId: "",
-  lectures: [{ duration: 0, id: "", title: "", done: false }],
+  lectures: [{ duration: 0, id: "", title: "" }],
   credits: 0,
   doneLections: [""],
   setDoneLectionsArray: (id: string) => {},
@@ -39,7 +38,6 @@ export const AuthContext = React.createContext({
       duration: number;
       id: string;
       title: string;
-      done: boolean;
     }[]
   ) => {},
   startLoading: () => {},

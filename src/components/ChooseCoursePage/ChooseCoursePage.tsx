@@ -13,12 +13,13 @@ interface Lecture {
 }
 const ChooseCoursePage = () => {
   const context = useContext(AuthContext);
-  const [courseTitles, setCourseTitles] = useState<string[]>([""]);
+  const [courseProgress, setCourseProgress] = useState<any>();
 
   useEffect(() => {
-    fetchCourses(setCourseTitles);
+    const route = `users/${localStorage.getItem("userId")}`;
+    fetchCourses(setCourseProgress, route);
   }, []);
-  if (!courseTitles) {
+  if (!courseProgress) {
     return (
       <div>
         <i className="fa fa-cog fa-spin fa-8x" />
@@ -30,18 +31,18 @@ const ChooseCoursePage = () => {
     <div className={ChooseCourseStyling.Container}>
       <div className={ChooseCourseStyling.Title}>
         <h1>My Courses</h1>
-        <button onClick={() => console.log(courseTitles)}>show state</button>
-        <button onClick={() => console.log(context.route)}>
-          show route prop
-        </button>
       </div>
       <div className={ChooseCourseStyling.Courses}>
-        {courseTitles!.map((course) => (
+        {courseProgress!.map((course: { title: string, rating: number, watchedLessons: number[], imgUrl: string }, idx: number) => (
           <ChooseCard
-            key={course}
-            title={course}
-            route={course.split(" ").join("-")}
-            click={() => context.setRouteProp(course)}
+            watchedLessons={course.watchedLessons}
+            index={idx}
+            rating={course.rating}
+            key={course.title}
+            title={course.title}
+            imgUrl={course.imgUrl}
+            route={course.title.split(" ").join("-")}
+            click={() => context.setRouteProp(course.title)}
           />
         ))}
       </div>
