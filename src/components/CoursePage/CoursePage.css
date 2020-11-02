@@ -18,6 +18,7 @@
   align-items: center;
   border: 1px solid black;
   cursor: pointer;
+  min-width: 125px;
 }
 .lecture:hover {
   background: rgb(194, 190, 190);
@@ -81,7 +82,13 @@
   color: green;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1200px) {
+  .course-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
   .lecture {
     min-width: 125px;
     padding: 0;

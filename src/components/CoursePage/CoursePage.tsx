@@ -15,7 +15,7 @@ interface Lecture {
 const CoursePage: React.FC = () => {
   const context = useContext(AuthContext);
   const [selectedLecture, setSelectedLecture] = useState<Lecture>(context.lectures[0]);
-  const [initiallyDoneLections, setInitiallyDoneLections] = useState<string[]>([])
+  const [, setInitiallyDoneLections] = useState<string[]>([])
   const convertSecsToMins = (duration: number) => {
     return Math.floor(duration / 60);
   };
@@ -34,7 +34,7 @@ const CoursePage: React.FC = () => {
         <React.Fragment>
           <div className="progress-bar">
             {context.lectures &&
-              context.lectures.map((lecture) => (
+              context.lectures.sort((a, b) => +a.id.split("-")[1] - +b.id.split("-")[1]).map((lecture) => (
                 <div
                   className="lecture"
                   key={lecture.id}
@@ -66,13 +66,13 @@ const CoursePage: React.FC = () => {
             <div className="lecture-info">
               <h1 className="lecture-header">{selectedLecture.title}</h1>
               <div className="lecture-duration">
-                Lesson length{" "}
+                Длина лекции{" "}
                 <span className="duration">
                   {convertSecsToMins(selectedLecture.duration)} min
                 </span>{" "}
               </div>
               <div className="lecture-credits">
-                Earn <b>10</b> credits for finishing this lesson
+                Получите <b>10</b> единиц валюты за прохождение этой лекции
               </div>
               <div className="lecture-description">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. In,
@@ -84,12 +84,11 @@ const CoursePage: React.FC = () => {
                 onClick={() => {
                   context.increaseCredits(10);
                   context.setDoneLectionsArray(selectedLecture.id);
-                  //@ts-ignore
-                  makeProgress(localStorage.getItem("userId"), localStorage.getItem("route"), JSON.parse(localStorage.getItem("doneLections")))
+                  makeProgress(localStorage.getItem("userId"), localStorage.getItem("route"), JSON.parse(localStorage.getItem("doneLections")!))
                 }}
                 disabled={context.doneLections.includes(selectedLecture.id)}
               >
-                { context.doneLections.includes(selectedLecture.id) ? "Lection is done" : "Mark as done" }
+                { context.doneLections.includes(selectedLecture.id) ? "Лекция пройдена" : "Отметить как выполенено" }
               </button>
             </div>
             <div className="video-player">

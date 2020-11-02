@@ -22,7 +22,7 @@ const Header: React.FC = () => {
                 color: "#c7815e",
               }}
             >
-              Home
+              Домашняя страница
             </NavLink>
           </nav>
         ) : (
@@ -33,7 +33,7 @@ const Header: React.FC = () => {
                 color: "#c7815e",
               }}
             >
-              Courses
+              Курсы
             </NavLink>
             <NavLink
               to="/community"
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
                 color: "#c7815e",
               }}
             >
-              Community
+              Сообщество
             </NavLink>
             <NavLink
               to="/tracking"
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
                 color: "#c7815e",
               }}
             >
-              Tracking
+              Отчёт
             </NavLink>
           </nav>
         )}
@@ -62,17 +62,17 @@ const Header: React.FC = () => {
               <i className="fas fa-caret-down"></i>
               {open && (
                 <ul className="dd-list">
-                  <NavLink to="/settings">Settings</NavLink>
+                  <NavLink to="/settings">Настройки</NavLink>
                   <NavLink to="/" onClick={() => context.logout()}>
                     Logout
                   </NavLink>
                 </ul>
               )}
             </div>
-            <div className="credits">{context.credits} Credits</div>
+            <div className="credits">{context.credits} Кредитов</div>
           </div>
         ) : (
-          <div className="profile-group">Login first</div>
+          <div className="profile-group">Для начала войдите!</div>
         )}
       </header>
     </React.Fragment>

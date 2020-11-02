@@ -30,10 +30,10 @@ const ChooseCoursePage = () => {
   return (
     <div className={ChooseCourseStyling.Container}>
       <div className={ChooseCourseStyling.Title}>
-        <h1>My Courses</h1>
+        <h1>Мои Курсы</h1>
       </div>
       <div className={ChooseCourseStyling.Courses}>
-        {courseProgress!.map((course: { title: string, rating: number, watchedLessons: number[], imgUrl: string }, idx: number) => (
+        {courseProgress!.map((course: { title: string, rating: number, watchedLessons: string[], imgUrl: string }, idx: number) => (
           <ChooseCard
             watchedLessons={course.watchedLessons}
             index={idx}

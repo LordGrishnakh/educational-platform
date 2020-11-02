@@ -26,13 +26,16 @@
   .Container {
     padding-left: 125px;
   }
+  .Courses {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
-@media (max-width: 769px) {
+@media (max-width: 799px) {
   .Container {
     padding-left: 50px;
   }
   .Courses {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 100px;
   }
 }

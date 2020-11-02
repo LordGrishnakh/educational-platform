@@ -36,7 +36,7 @@ const Modal: React.FC<{ show: boolean; hideModal: () => void }> = (props) => {
                 color: "#c7815e",
               }}
             >
-              Course
+              Курсы
             </NavLink>
             <NavLink
               to="/community"
@@ -44,7 +44,7 @@ const Modal: React.FC<{ show: boolean; hideModal: () => void }> = (props) => {
                 color: "#c7815e",
               }}
             >
-              Community
+              Сообщество
             </NavLink>
             <NavLink
               to="/tracking"
@@ -52,10 +52,10 @@ const Modal: React.FC<{ show: boolean; hideModal: () => void }> = (props) => {
                 color: "#c7815e",
               }}
             >
-              Tracking
+              Отчёт
             </NavLink>
             <NavLink to="/" onClick={() => context.logout()}>
-              Logout
+              Выйти
             </NavLink>
           </div>
         ) : null}
