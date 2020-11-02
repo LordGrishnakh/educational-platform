@@ -58,13 +58,13 @@ const Header: React.FC = () => {
           <div className="profile-group">
             <div className="profile" onClick={() => setOpen(!open)}>
               <i className="far fa-user"></i>
-              <span> Rogi </span>
+              <span> {localStorage.getItem("username")} </span>
               <i className="fas fa-caret-down"></i>
               {open && (
                 <ul className="dd-list">
                   <NavLink to="/settings">Настройки</NavLink>
                   <NavLink to="/" onClick={() => context.logout()}>
-                    Logout
+                    Выйти
                   </NavLink>
                 </ul>
               )}

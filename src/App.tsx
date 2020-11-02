@@ -8,11 +8,12 @@ import Tracking from "./components/Tracking/Tracking";
 import Landing from "./components/Landing/Landing";
 import { AuthContext } from "./context/AuthContext";
 import ChooseCoursePage from "./components/ChooseCoursePage/ChooseCoursePage";
+import Settings from "./components/Settings/Settings";
 
 function App() {
   const [credits, setCredits] = useState(0);
   const [auth, setAuth] = useState(false);
-  const [route, setRoute] = useState("")
+  const [route, setRoute] = useState("");
   const [userId, setUserId] = useState("");
   const [load, setLoad] = useState(false);
   const [doneLections, setDoneLections] = useState<string[]>([""]);
@@ -22,13 +23,14 @@ function App() {
       id: string;
       title: string;
     }[]
-  >([
-    { duration: 0, id: "1", title: "0" },
-  ]);
+  >([{ duration: 0, id: "1", title: "0" }]);
 
   useEffect(() => {
     if (localStorage.getItem("userId")) {
       setAuth(true);
+    }
+    if (!localStorage.getItem("username")) {
+      localStorage.setItem("username", "Rogi");
     }
   }, []);
 
@@ -73,7 +75,7 @@ function App() {
   const setRouteProp = (route: string) => {
     localStorage.setItem("route", route);
     setRoute(route);
-  }
+  };
 
   return (
     <AuthContext.Provider
@@ -93,7 +95,7 @@ function App() {
         setUser: setUser,
         logout: logout,
         route: route,
-        setRouteProp: setRouteProp
+        setRouteProp: setRouteProp,
       }}
     >
       <div className="App">
@@ -106,7 +108,7 @@ function App() {
             <Route path="/community" component={CommunityPage} />
             <Route path="/tracking" component={Tracking} />
           </Switch>
-          {/* <Route path="/settings" component={Settings} /> */}
+          <Route path="/settings" component={Settings} />
           {/* <Route path="/logout" component={Logout} /> */}
         </BrowserRouter>
       </div>

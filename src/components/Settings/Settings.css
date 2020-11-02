@@ -1,0 +1,49 @@
+.container {
+  border: 1px solid red;
+  margin: 2rem 5rem;
+  height: calc(100vh - 101px);
+  box-sizing: border-box;
+}
+.container h1 {
+  margin: 1rem 0;
+}
+
+.container-settings {
+  margin: 3rem;
+}
+.details {
+  margin: 1rem 0;
+}
+
+.input-group label,
+.input-group input {
+  display: block;
+}
+.input-group input {
+  margin-top: .5rem;
+  width: 30%;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.settings {
+  display: flex;
+  height: 90%;
+}
+
+.sidebar-settings {
+  flex: 0 0 20%;
+  border: 3px solid black;
+}
+.sidebar-settings div {
+  padding: 2rem;
+  border: 3px solid blue;
+}
+.sidebar-settings div:hover {
+  background-color: #DDEBFE;
+}
+
+.main-content {
+  border: 3px solid red;
+  flex: 0 0 80%;
+}
