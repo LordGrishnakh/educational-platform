@@ -25,7 +25,7 @@ const Modal: React.FC<{ show: boolean; hideModal: () => void }> = (props) => {
               </div>
             </div>
           ) : (
-            <div>Login first</div>
+            <div>Для начала войдите</div>
           )}
         </div>
         {context.authenticated ? (

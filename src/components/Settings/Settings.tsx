@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { validateLocaleAndSetLanguage } from "typescript";
 import { updateUserPassword } from "../../API/Authentication/Authentication";
 import "./Settings.css";
 

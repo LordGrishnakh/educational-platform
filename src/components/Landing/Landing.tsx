@@ -21,15 +21,17 @@ const Landing: React.FC = () => {
 
   return (
     <div className="container-auth">
-      {<h1 style={{ color: "red" }}>{errorMsg}</h1>}
       {!context.loading ? (
         <>
           <div className={`login-box ${authMode}`}>
+            {<h1 style={{ color: "red" }}>{errorMsg}</h1>}
             <h1>Для начала войдите</h1>
             <div className="login-group">
               <h2>
-                {authMode === "signup" ? "ФОРМА СОЗДАНИЯ АККАУНТА " : "ФОРМА ВХОДА В АККАУНТ "} с помощью
-                логина и пароля
+                {authMode === "signup"
+                  ? "ФОРМА СОЗДАНИЯ АККАУНТА "
+                  : "ФОРМА ВХОДА В АККАУНТ "}{" "}
+                с помощью логина и пароля
               </h2>
               <form
                 onSubmit={(e) => {
