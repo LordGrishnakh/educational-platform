@@ -1,9 +1,14 @@
 import React, { useState, useRef } from "react";
+import { validateLocaleAndSetLanguage } from "typescript";
+import { updateUserPassword } from "../../API/Authentication/Authentication";
 import "./Settings.css";
 
 const Settings: React.FC = () => {
   const [shownPage, setShownPage] = useState<"profile" | "password">("profile");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const profileRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
 
   let settingsHTML = null;
 
@@ -11,6 +16,14 @@ const Settings: React.FC = () => {
     localStorage.setItem("username", username);
     window.location.reload();
   };
+  const validate = () => {
+    if (passwordRef.current!.value.length < 6) {
+      passwordRef.current!.className = "invalid"
+      return
+    }
+    setErrorMessage("");
+    passwordRef.current!.className = "valid"
+  }
 
   switch (shownPage) {
     case "profile":
@@ -46,15 +59,33 @@ const Settings: React.FC = () => {
             <p>Здесь вы можете поменять свой пароль</p>
           </div>
           <div className="input-group">
-            <label htmlFor="name">Пароль</label>
+            <label htmlFor="password">Пароль</label>
+            <span className="error">{errorMessage}</span>
             <input
+              className="invalid"
               type="text"
-              name="name"
-              ref={profileRef}
-              value={localStorage.getItem("username")!}
+              name="password"
+              onChange={()=>validate()}
+              ref={passwordRef}
+              placeholder={localStorage.getItem("username")!}
             />
-            <button onClick={() => setNewUsername(profileRef.current!.value)}>
-              Сохранить
+            <button
+              onClick={() => {
+                updateUserPassword(
+                  passwordRef.current!.value,
+                  setLoading,
+                  setErrorMessage
+                );
+              }}
+              disabled={loading}
+            >
+              {!loading ? (
+                "Сохранить"
+              ) : (
+                <div>
+                  <i className="fa fa-cog fa-spin" />
+                </div>
+              )}
             </button>
           </div>
         </div>

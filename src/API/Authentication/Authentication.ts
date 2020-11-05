@@ -57,11 +57,11 @@ const routeToIndex = (route: string) => {
       return "17";
     case "Time Management":
       return "18";
-  
+
     default:
       return "0";
   }
-}
+};
 
 export const firebaseAuthAnonym: (
   context: Context,
@@ -463,7 +463,7 @@ export const fetchCourse = (
     .ref(`courses/${route}`)
     .on("value", (snap) => {
       setCourseLectures(Object.values(snap.val()));
-      setSelectedLecture(Object.values(snap.val())[0])
+      setSelectedLecture(Object.values(snap.val())[0]);
       finishLoading();
     });
   firebase
@@ -471,7 +471,7 @@ export const fetchCourse = (
     .ref(`users/${userId}/${routeToIndex(route)}/watchedLessons`)
     .on("value", (snap) => {
       fetchDoneLections(snap.val());
-    })
+    });
 };
 export const fetchCourses = (
   setCourseProgress: (a: any) => void,
@@ -485,12 +485,53 @@ export const fetchCourses = (
     });
 };
 
-export const makeProgress = (userId: string | null, route: any, doneLections: any) => {
-  firebase.database().ref(`users/${userId}/${routeToIndex(route)}/watchedLessons`).set(doneLections)
-}
+export const makeProgress = (
+  userId: string | null,
+  route: any,
+  doneLections: any
+) => {
+  firebase
+    .database()
+    .ref(`users/${userId}/${routeToIndex(route)}/watchedLessons`)
+    .set(doneLections);
+};
 
-export const setRating = (userId: any, courseIdx: number, ratingValue: number ) => {
+export const setRating = (
+  userId: any,
+  courseIdx: number,
+  ratingValue: number
+) => {
   firebase.database().ref(`users/${userId}/${courseIdx}`).update({
-    rating: ratingValue
+    rating: ratingValue,
   });
-}
+};
+
+export const updateUserPassword = (
+  newPassword: string,
+  setLoadingState: (a: boolean) => void,
+  setErrorMessage: (err: string) => void
+) => {
+  const user = firebase.auth().currentUser;
+  if (!user) {
+    setLoadingState(true)
+    setTimeout(() => {
+      setLoadingState(false)
+    }, 1000)
+    
+  }
+  console.log(user);
+  if (user) {
+    setLoadingState(true)
+    user!
+      .updatePassword(newPassword)
+      .then(function () {
+        console.log("success");
+        setLoadingState(false);
+      })
+      .catch(function (error) {
+        console.log(error);
+        setLoadingState(false);
+        setErrorMessage(error.message)
+      });
+  }
+};

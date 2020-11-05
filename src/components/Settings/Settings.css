@@ -10,6 +10,7 @@
 .container-settings {
   margin: 3rem;
 }
+
 .details {
   margin: 1rem 0;
 }
@@ -18,11 +19,18 @@
 .input-group input {
   display: block;
 }
-.input-group input {
+.input-group input:focus {
+  outline: 0;
+}
+.input-group input,
+.input-group button {
   margin-top: .5rem;
   width: 30%;
   padding: 1rem;
   border-radius: 15px;
+}
+.input-group button:hover {
+  background-color: #b2bfd1;
 }
 
 
@@ -45,4 +53,18 @@
 .main-content {
   background-color: #DDEBFE;
   flex: 0 0 80%;
+}
+
+.error {
+  color: red;
+}
+
+.invalid {
+  color: red;
+  border: 1px solid red;
+}
+
+.valid {
+  color: unset;
+  border: 1px solid green;
 }
