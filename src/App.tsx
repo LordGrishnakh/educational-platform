@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./App.scss";
 import Header from "./components/Header/Header";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CoursePage from "./components/CoursePage/CoursePage";
@@ -107,8 +107,8 @@ function App() {
             <Route path="/courses/:id" component={CoursePage} />
             <Route path="/community" component={CommunityPage} />
             <Route path="/tracking" component={Tracking} />
+            <Route path="/settings" component={Settings} />
           </Switch>
-          <Route path="/settings" component={Settings} />
           {/* <Route path="/logout" component={Logout} /> */}
         </BrowserRouter>
       </div>
