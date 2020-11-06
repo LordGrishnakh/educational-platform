@@ -14,7 +14,7 @@ const AddNewProject: React.FC<{
     projectDescriptionRef.current!.value = "";
   };
 
-  const addProjectHandler = (e: React.MouseEvent) => {
+  const addProjectHandler = (e: React.FormEvent) => {
     e.preventDefault();
     props.addProject({
       id: Math.random().toString(),
@@ -28,12 +28,12 @@ const AddNewProject: React.FC<{
   return (
     <div className={Styles.Container}>
       <div className={Styles.Header}>ДОБАВИТЬ ПРОЕКТ</div>
-      <form>
+      <form onSubmit={addProjectHandler}>
         <label>Наименование</label>
-        <input type="text" ref={projectTitleRef} />
+        <input minLength={3} required type="text" ref={projectTitleRef} />
         <label>Описание</label>
-        <textarea ref={projectDescriptionRef} />
-        <button onClick={addProjectHandler}>Добавить</button>
+        <textarea minLength={3} required ref={projectDescriptionRef} />
+        <button type="submit">Добавить</button>
         <button
           className={Styles.CloseBtn}
           onClick={() => props.closeForm(false)}
