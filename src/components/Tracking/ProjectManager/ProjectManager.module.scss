@@ -1,0 +1,60 @@
+.Container {
+  position: relative;
+  border: 2px solid black;
+  width: 750px;
+  min-height: 80%;
+
+  & .Header {
+    height: 100px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+
+  & .Projects {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    & header {
+      padding: 2rem;
+    }
+    & li {
+      background-color: white;
+    }
+
+    & .Project {
+      border: 2px solid black;
+      padding: 2rem;
+      margin: 1rem;
+      list-style-type: none;
+    }
+
+    & .Active {
+      border: 2px solid #C7814C;
+      min-height: 150px;
+      margin-bottom: 4rem;
+    }
+
+    & .Finished {
+      border: 2px solid #333333;
+      min-height: 150px;
+    }
+  }
+
+  & .CloseBtn {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    background-color: #C7814C;
+    color: white;
+
+    &:hover {
+      background-color: orange;
+    }
+  }
+}
