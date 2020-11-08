@@ -23,6 +23,7 @@
     }
     & li {
       background-color: white;
+      cursor: grab;
     }
 
     & .Project {
@@ -33,7 +34,7 @@
     }
 
     & .Active {
-      border: 2px solid #C7814C;
+      border: 2px solid #c7814c;
       min-height: 150px;
       margin-bottom: 4rem;
     }
@@ -50,11 +51,43 @@
     right: 0;
     padding: 0.5rem 1rem;
     font-size: 2rem;
-    background-color: #C7814C;
+    background-color: #c7814c;
     color: white;
 
     &:hover {
       background-color: orange;
+    }
+  }
+}
+
+@media (max-width: 1520px) {
+  .Container {
+    width: 600px;
+
+    & .Header {
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    & .CloseBtn {
+      margin-top: 1rem;
+      position: unset;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .Container {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .Container {
+    width: 90%;
+
+    & .Projects {
+      padding: 0;
     }
   }
 }

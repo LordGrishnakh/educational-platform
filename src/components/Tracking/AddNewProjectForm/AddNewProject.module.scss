@@ -19,8 +19,9 @@
     display: flex;
     flex-direction: column;
 
-    & input, & textarea {
-      padding: .5rem .5rem;
+    & input,
+    & textarea {
+      padding: 0.5rem 0.5rem;
       margin: 1rem 0;
     }
 
@@ -32,7 +33,7 @@
       font-size: 1.5rem;
 
       &:hover {
-        background-color: #6B6767;
+        background-color: #6b6767;
       }
     }
   }
@@ -46,6 +47,28 @@
       background-color: transparent;
       color: red;
       border: 2px solid red;
+    }
+  }
+}
+
+@media (max-width: 1520px) {
+  .Container {
+    width: 600px;
+  }
+}
+
+@media (max-width: 640px) {
+  .Container {
+    width: 90%;
+
+    & .Header {
+      text-align: center;
+    }
+
+    & form {
+      & button {
+        min-width: 70%;
+      }
     }
   }
 }

@@ -30,12 +30,26 @@ const ProjectManager: React.FC<{
     e.currentTarget.classList.remove("droppable");
     const prjId = e.dataTransfer!.getData("text/plain");
     console.log(e.currentTarget.classList[0].includes("Active"));
-    props.switchProjectStatus(prjId, e.currentTarget.classList[0].includes("Active"));
+    props.switchProjectStatus(
+      prjId,
+      e.currentTarget.classList[0].includes("Active")
+    );
   };
 
   return (
     <div className={Styles.Container}>
-      <div className={Styles.Header}>ПРОЕКТЫ</div>
+      <div className={Styles.Header}>
+        <p>ПРОЕКТЫ</p>
+        {!props.formOpened && (
+          <button
+            className={Styles.CloseBtn}
+            disabled={props.formOpened}
+            onClick={() => props.openForm(true)}
+          >
+            Добавить проект
+          </button>
+        )}
+      </div>
       <div className={Styles.Projects}>
         <div
           className={Styles.Active}
@@ -92,14 +106,6 @@ const ProjectManager: React.FC<{
           </ul>
         </div>
       </div>
-
-      <button
-        className={Styles.CloseBtn}
-        disabled={props.formOpened}
-        onClick={() => props.openForm(true)}
-      >
-        Добавить проект
-      </button>
     </div>
   );
 };
