@@ -31,7 +31,7 @@ const Modal: React.FC<{ show: boolean; hideModal: () => void }> = (props) => {
         {context.authenticated ? (
           <div className="navigation" onClick={() => props.hideModal()}>
             <NavLink
-              to="/course"
+              to="/courses"
               activeStyle={{
                 color: "#c7815e",
               }}
@@ -53,6 +53,14 @@ const Modal: React.FC<{ show: boolean; hideModal: () => void }> = (props) => {
               }}
             >
               Отчёт
+            </NavLink>
+            <NavLink
+              to="/settings"
+              activeStyle={{
+                color: "#c7815e",
+              }}
+            >
+              Настройки
             </NavLink>
             <NavLink to="/" onClick={() => context.logout()}>
               Выйти
