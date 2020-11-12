@@ -101,7 +101,7 @@ const Landing: React.FC = () => {
             </div>
           </div>
           <div className="image">
-            <img src="images/abstractEducationMain.jpg" alt="123" />
+            <img src="images/abstractEducationMain.webp" alt="123" />
           </div>
         </>
       ) : (
